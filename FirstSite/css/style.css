@@ -72,9 +72,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+.Header {
+  width: 100%;
+  background-color: transparent;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   max-width: 1170px;
   margin: 0 auto;
 }
@@ -94,6 +100,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   text-transform: uppercase;
   line-height: 15px;
-  color: black;
   text-align: center;
+}
+
+.menu__link {
+  color: black;
 }

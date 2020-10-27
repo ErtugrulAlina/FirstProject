@@ -1,10 +1,13 @@
 @import "NullStyle.scss";
 
 .Header {
+    width: 100%;
+    background-color: transparent;
 }
 .container {
     display:flex;
     justify-content: space-between;
+    width: 100%;
     max-width: 1170px;
     margin: 0 auto;
 }
@@ -18,7 +21,6 @@
     width: 31px;
 }
 .menu {
-    
 }
 .menu__list {
     display: flex;
@@ -26,9 +28,9 @@
     font-size: 15px;
     text-transform: uppercase;
     line-height: 15px;
-    color: black;
     text-align: center;
-    
+   
 }
 .menu__link {
+    color: black;
 }
