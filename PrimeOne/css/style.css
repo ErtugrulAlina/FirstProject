@@ -218,6 +218,7 @@ header {
   font-size: 0;
   background-color: black;
   margin: 0 0 75px 0;
+  max-height: 425px;
 }
 
 .private__column {
@@ -228,7 +229,6 @@ header {
   display: block;
 }
 .private__image img {
-  width: 100%;
   object-fit: cover;
 }
 
