@@ -9,16 +9,17 @@
 	@include flexbox();
 	background-color: black;
 	margin: 0 0 75px 0;
-	max-height: 425px;
+	// max-height: 425px;
 }
 .private__column {
 	flex: 0 0 50%;
 }
 .private__image {
 	display: block;
+	// height: 425px;
 	img {
-		
-		object-fit: cover;
+		width: 100%;
+		height: 100%;
 	}
 	
 }
