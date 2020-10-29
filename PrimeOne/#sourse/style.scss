@@ -8,18 +8,22 @@
 .private {
 	@include flexbox();
 	background-color: black;
+	margin: 0 0 75px 0;
 }
 .private__column {
 	flex: 0 0 50%;
 }
 .private__image {
+	display: block;
 	img {
+		width: 100%;
 		object-fit: cover;
 	}
 	
 }
 .privat-body {
 	padding: 75px 0 75px 60px;
+	
 }
 .privat-body-content{
 	max-width: 305px;
@@ -55,7 +59,62 @@
 	letter-spacing: 1.5px;
 }
 
+///////////////////////////////////////////////////////////
+
+.products {
+}
+.container {
+}
+.products-body {
+	@include flexbox();
+}
+.products-column {
+	flex: 0 0 25%
+}
+.products-item {
+	@include flexbox();
+	height: 100%;
+	flex-direction: column;
+		&__image {
+			display: block;
+			margin: 0 0 25px 0;
+		}
+		&__title {
+			max-width: 185px;
+			display: block;
+			font-family: 'ConvAkzidenzGroteskBoldCond';
+			font-size: 25px;
+			letter-spacing: 2.5px;
+			text-transform: uppercase;
+			color: black;
+			margin: 0 0 30px 0;
+
+		}
+		&__text {
+			flex: 1 1 auto;
+			padding: 0 10px 0 0;
+			max-width: 185px;
+			font-size: 15px;
+			line-height: 25px;
+			font-family: PT Sans;
+			color: black;
+			margin: 0 0 25px 0;
+		}
+		&__btn {
+			margin: 0 0 29px 0;
+			
+		}
+		&__link {
+			display: block;
+			font-family: 'Bebas';
+			text-transform: uppercase;
+			color: black;
+			font-size: 15px;
+			letter-spacing: 1.5px;
+			text-decoration: underline;
+		}
+}
+
+
+
 //  /<MAIN BLOCK>
-
-
-
