@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: "ConvAkzidenzGroteskBoldCond";
+  src: url("../fonts/AkzidenzGrotesk-BoldCond.eot");
+  src: local("☺"), url("../fonts/AkzidenzGrotesk-BoldCond.woff") format("woff"), url("../fonts/AkzidenzGrotesk-BoldCond.ttf") format("truetype"), url("../fonts/AkzidenzGrotesk-BoldCond.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bebas";
+  src: url("../fonts/BebasNeue Regular.eot");
+  src: local("☺"), url("../fonts/BebasNeue Regular.woff") format("woff"), url("../fonts/BebasNeue Regular.ttf") format("truetype"), url("../fonts/BebasNeue Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+header {
+  padding: 29px 0 32px 0;
+  height: 175px;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-top-lang {
+  display: flex;
+}
+
+.header-top-lang__item {
+  display: block;
+  line-height: 19px;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Bebas";
+  letter-spacing: 1px;
+  padding: 0 4px;
+  margin: 0 10px 0 0;
+}
+.header-top-lang__item.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.header-top-link {
+  color: black;
+  font-family: "ConvAkzidenzGroteskBoldCond";
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0;
+  font-size: 15px;
+}
+
+.header-bottom {
+  margin: -10px 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-bottom__column {
+  flex: 0 0 33.333%;
+}
+
+.header-bottom-menu--right .header-bottom-menu-list {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  text-align: right;
+}
+.header-bottom-menu--right .header-bottom-menu-list li {
+  margin: 0 0 0 45px;
+}
+.header-bottom-menu--right .header-bottom-menu-list li:first-child {
+  margin: 0;
+}
+.header-bottom-menu--right .header-bottom-menu-list li:last-child {
+  margin: 0 0 0 45px;
+}
+
+.header-bottom-menu-list {
+  display: flex;
+}
+.header-bottom-menu-list li {
+  margin: 0 45px 0 0;
+}
+.header-bottom-menu-list li:last-child {
+  margin: 0 0px 0 0;
+}
+
+.header-bottom-menu__link {
+  font-family: "ConvAkzidenzGroteskBoldCond";
+  color: black;
+  font-size: 15px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5 px;
+}
+
+.header-logo {
+  display: block;
+  text-align: center;
+}
+
+.header-logo__text {
+  display: block;
+  font-family: Bebas;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #000000;
+}
+
+.header-logo__image {
+  display: inline-block;
+  margin: 13px 0 23px 0;
+}
+
+.btn {
+  height: 50px;
+  line-height: 50px;
+  background-color: black;
+  display: inline-block;
+  padding: 0 33px;
+  font-size: 15px;
+  font-family: "Bebas";
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1.5px;
+}
+.btn--w {
+  background-color: white;
+  color: black;
+}
+
+.private {
+  display: flex;
+  font-size: 0;
+  background-color: black;
+}
+
+.private__column {
+  flex: 0 0 50%;
+}
+
+.private__image img {
+  height: 100%;
+  object-fit: fill;
+}
+
+.privat-body {
+  padding: 75px 0 75px 60px;
+}
+
+.privat-body-content {
+  max-width: 305px;
+}
+
+.private-body__title {
+  font-size: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "ConvAkzidenzGroteskBoldCond";
+  letter-spacing: 5px;
+  margin: 0 0 30px 0;
+}
+
+.privat-body__text {
+  color: white;
+  font-family: PT Sans;
+  font-size: 15px;
+  line-height: 25px;
+  margin: 0 0 50px 0;
+}
+
+.privat-body-buttons {
+  display: flex;
+  font-size: 0;
+  align-items: center;
+}
+
+.privat-body-buttons__link {
+  font-family: "Bebas";
+  text-transform: uppercase;
+  color: white;
+  font-size: 15px;
+  text-decoration: underline;
+  margin: 0 0 0 15px;
+  letter-spacing: 1.5px;
+}

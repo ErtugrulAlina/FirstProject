@@ -1,0 +1,63 @@
+
+@import "NullStyle.scss";
+@import "header.scss";
+@import "forms.scss";
+
+//  <MAIN BLOCK>
+.content {}
+.private {
+	@include flexbox();
+	background-color: black;
+}
+.private__column {
+	flex: 0 0 50%;
+}
+.private__image {
+	img {
+		width: ;: 100%;
+
+		object-fit: cover;
+	}
+	
+}
+.privat-body {
+	padding: 75px 0 75px 60px;
+}
+.privat-body-content{
+	max-width: 305px;
+}
+.private-body__title {
+	font-size: 50px;
+	line-height: 50px;
+	text-transform: uppercase;
+	color: white;
+	font-family: 'ConvAkzidenzGroteskBoldCond';
+	letter-spacing: 5px;
+	margin: 0 0 30px 0;
+}
+.privat-body__text {
+	color: white;
+	font-family: PT Sans;
+	font-size: 15px;
+	line-height: 25px;
+	margin: 0 0 50px 0;
+}
+.privat-body-buttons {
+	@include flexbox();
+	align-items:center ;
+}
+.privat-body-buttons__item.btn.btn--w {}
+.privat-body-buttons__link {
+	font-family: 'Bebas';
+	text-transform: uppercase;
+	color: white;
+	font-size: 15px;
+	text-decoration: underline;
+	margin: 0 0 0 15px;
+	letter-spacing: 1.5px;
+}
+
+//  /<MAIN BLOCK>
+
+
+

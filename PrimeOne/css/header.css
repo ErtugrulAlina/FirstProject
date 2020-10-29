@@ -1,0 +1,41 @@
+header {
+  padding: 29px 0 33px 0;
+}
+
+.container {
+  max-width: 880px;
+  margin: auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-top-lang {
+  display: flex;
+}
+
+.header-top-lang__item {
+  display: block;
+  line-height: 19px;
+  color: black;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: Bebas;
+  letter-spacing: 1px;
+  padding: 0 4px;
+  margin: 0 10px 0 0;
+}
+.header-top-lang__item.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.header-top-link {
+  color: black;
+  font-family: ConvAkzidenzGroteskRegular;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 15px;
+}

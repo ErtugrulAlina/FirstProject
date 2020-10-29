@@ -1,0 +1,104 @@
+header{
+padding: 29px 0 32px 0;
+height: 175px;
+
+}
+.container {
+   
+    max-width: 880px;
+    margin: 0 auto;
+}
+.header-top {
+     display: flex;
+     justify-content: space-between;
+}
+.header-top-lang {
+    display: flex;
+}
+.header-top-lang__item {
+    display: block;
+    line-height: 19px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Bebas';
+    letter-spacing: 1px;
+    padding: 0 4px;
+    margin: 0 10px 0 0;
+    &.active{
+        background-color: #000000;
+        color: #ffffff;
+
+    }
+
+}
+.header-top-link {
+    color: black;
+	font-family: 'ConvAkzidenzGroteskBoldCond';
+   text-transform: uppercase;
+   text-decoration: underline;
+   letter-spacing: 0;
+   font-size: 15px;
+
+}
+.header-bottom {
+    margin: -10px 0 0 0;
+    display: flex;
+    align-items: center;
+}
+.header-bottom__column {
+    flex: 0 0 33.333%;
+}
+.header-bottom-menu {
+    &--right{
+        .header-bottom-menu-list{
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            text-align: right;
+            li{
+                margin: 0 0 0 45px;
+                &:first-child{
+                    margin: 0;
+                }
+                &:last-child{
+                    margin: 0 0 0 45px;
+                }
+            }
+        }
+
+    }
+}
+
+.header-bottom-menu-list {
+    display: flex;
+    li{
+        margin: 0 45px 0 0;
+        &:last-child{margin: 0 0px 0 0;}
+    }
+}
+.header-bottom-menu__link {
+    font-family: 'ConvAkzidenzGroteskBoldCond';
+    color: black;
+    font-size: 15px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5 px;
+}
+.header-logo {
+    display: block;
+    text-align: center;
+}
+.header-logo__text {
+    display: block;
+    font-family: Bebas;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #000000;
+}
+.header-logo__image {
+    display: inline-block;
+    margin: 13px 0 23px 0;
+}
+

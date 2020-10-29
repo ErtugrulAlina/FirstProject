@@ -1,0 +1,16 @@
+.btn{
+    height: 50px;
+    line-height: 50px;
+    background-color: black;
+    display: inline-block;
+    padding: 0 33px;
+    font-size: 15px;
+    font-family: 'Bebas';
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.5px;
+    &--w{
+        background-color: white;
+        color: black;
+    }
+}
