@@ -13,13 +13,15 @@
 }
 .private__column {
 	flex: 0 0 50%;
+	overflow: hidden;
 }
 .private__image {
-	display: block;
-	// height: 425px;
+	
+	height: 430px;
 	img {
 		width: 100%;
 		height: 100%;
+		object-fit: cover;
 	}
 	
 }
