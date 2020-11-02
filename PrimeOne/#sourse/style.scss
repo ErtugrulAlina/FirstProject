@@ -4,7 +4,10 @@
 @import "forms.scss";
 
 //  <MAIN BLOCK>
-.content {}
+
+.content {
+	font-family: PT Sans;
+}
 .private {
 	@include flexbox();
 	background-color: black;
@@ -16,12 +19,11 @@
 	overflow: hidden;
 }
 .private__image {
-	
 	height: 430px;
 	img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: fill;
 	}
 	
 }
@@ -66,6 +68,7 @@
 ///////////////////////////////////////////////////////////
 
 .products {
+	margin: 0 0 40px 0;
 }
 .container {
 }
@@ -73,7 +76,9 @@
 	@include flexbox();
 }
 .products-column {
-	flex: 0 0 25%
+	flex: 0 0 25%;
+	margin: 0 0 40px 0;
+	
 }
 .products-item {
 	@include flexbox();
@@ -118,6 +123,166 @@
 			text-decoration: underline;
 		}
 }
+////////////////////////////////////////////////////
+.why-top {
+	@include flexbox();
+	
+	&__column {
+		flex: 0 0 50%;
+		background-color: black;
+		overflow: hidden;
+		
+		
+	}
+	&__text {
+		
+  		vertical-align: middle;
+		font-size: 50px;
+		font-family: 'ConvAkzidenzGroteskBoldCond';
+		color: white;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		padding: 60px 60px 60px 0;
+		text-align: right;
+		
+		
+	}
+	&__image {
+		height: 145px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: fill;
+		}
+	}
+}
+.why-body {
+	background-color: #ebebeb;
+	padding: 50px 0 0 0;
+	
+	&__column {
+		flex: 0 0 50%;
+		padding: 0 0 50px 0;
+	}
+}
+.why-body-row {
+	@include flexbox();
+	flex-wrap: wrap;
+}
+.why-body-item {
+	@include flexbox();
+	&__icon {
+		flex: 0 0 100px;
+		height: 100px;
+		background-color: black;
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		img{
+			width: 60px;
+			height: 60px;
+		}
+	}
+}
+.why-body-item-body {
+	flex: 1 1 100%;
+	padding:  0 0 0 11px;
+	@include flexbox();
+	flex-direction: column;
+	&__title {
+		flex:1 1 auto;
+		font-size: 25px;
+		font-family: 'ConvAkzidenzGroteskBoldCond';
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+	}
+	&__text {
+		font-size: 15px;
+		line-height: 25px;
+		font-family: PT Sans;
+		padding: 0 15px 0 0;
+	}
+}
+////////////////////////////////////////////////////////////////////
+.contacts {
+	padding: 80px 0 0 0;
+	&__title {
+		font-family: 'ConvAkzidenzGroteskBoldCond';
+		font-size: 50px;
+		line-height: 50px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		margin: 0 0 30px 0;
+		
+		
+	}
+}
+.contacts-top {
+}
+.container {
+}
+.contacts-body {
+	@include flexbox();
+	flex-wrap: wrap;
+	&__column {
+		margin: 0 0 20px 0;
+		flex: 0 0 50%;
+	}
+}
+.contacts-body-item {
+	font-size: 15px;
+	color: #000;
+	line-height: 25px;
+	padding:  5px 0 5px 35px;
+}
+.contacts-body-item--1 {
+	background: url('../img/contacts/1.svg') left no-repeat;
+}
+.contacts-body-item--2 {
+	background: url('../img/contacts/2.svg') left no-repeat;
+}
+.contacts-body-item--3 {
+	background: url('../img/contacts/3.svg') left no-repeat;
+}
+.contacts-social {
+	@include flexbox();
+
+	&__item {
+		margin: 0 30px 0 0;
+		&:last-child{
+			margin: 0 0 0 0;
+		}
+	}
+	&__item--1 {}
+	&__item--2 {}
+	&__item--3 {}
+	&__item--4 {}
+}
+.contacts-content {
+	@include flexbox();
+	background-color: black;
+	&__column {
+		flex: 0 0 50%;
+	}
+	&__map {}
+}
+.contacts-content-form {
+	&__title {}
+	&__btn {}
+}
+.contacts-content-form-body {
+}
+.contacts-content-form-line {
+}
+.input {
+}
+.contacts-content-form-botton {
+}
+.btn--w {
+}
+
+
 
 
 
