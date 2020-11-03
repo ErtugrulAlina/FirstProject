@@ -213,6 +213,36 @@ header {
   color: black;
 }
 
+input[type=text], input[type=emeil], input[type=tel], textarea {
+  -webkit-apperance: none;
+  -moz-apperance: none;
+  apperance: none;
+}
+
+.input {
+  border-radius: 0 !important;
+  width: 100%;
+  display: block;
+  padding: 0 18px;
+  height: 50px;
+  background-color: #252525;
+  border: 2px solid #959595;
+  color: #959595;
+  font-size: 15px;
+}
+textarea.input {
+  resize: none;
+  height: 100px;
+  padding: 10px 18px;
+}
+
+.section {
+  margin-bottom: 75px;
+}
+.section--last {
+  margin-bottom: 0;
+}
+
 .content {
   font-family: PT Sans;
 }
@@ -221,7 +251,6 @@ header {
   display: flex;
   font-size: 0;
   background-color: black;
-  margin: 0 0 75px 0;
 }
 
 .private__column {
@@ -280,10 +309,6 @@ header {
   letter-spacing: 1.5px;
 }
 
-.products {
-  margin: 0 0 40px 0;
-}
-
 .products-body {
   display: flex;
   font-size: 0;
@@ -291,7 +316,6 @@ header {
 
 .products-column {
   flex: 0 0 25%;
-  margin: 0 0 40px 0;
 }
 
 .products-item {
@@ -420,9 +444,6 @@ header {
   padding: 0 15px 0 0;
 }
 
-.contacts {
-  padding: 80px 0 0 0;
-}
 .contacts__title {
   font-family: "ConvAkzidenzGroteskBoldCond";
   font-size: 50px;
@@ -478,4 +499,42 @@ header {
 }
 .contacts-content__column {
   flex: 0 0 50%;
+}
+.contacts-content-form {
+  padding: 55px 60px;
+}
+.contacts-content-form__title {
+  font-family: "ConvAkzidenzGroteskBoldCond";
+  font-size: 25px;
+  line-height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0 0 30px 0;
+  color: white;
+}
+.contacts-content-form-body {
+  max-width: 375px;
+}
+
+.contacts-content-form-line {
+  margin: 0 0 25px 0;
+}
+
+.footer-body {
+  display: flex;
+  font-size: 0;
+  justify-content: space-between;
+  height: 125px;
+  align-items: center;
+}
+.footer__text {
+  font-size: 15px;
+  line-height: 25px;
+  color: #4d4d4d;
+}
+.footer__text a {
+  text-decoration: underline;
+}
+.footer__text a:hover {
+  text-decoration: none;
 }

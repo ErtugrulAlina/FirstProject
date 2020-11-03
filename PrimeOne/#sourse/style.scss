@@ -11,8 +11,8 @@
 .private {
 	@include flexbox();
 	background-color: black;
-	margin: 0 0 75px 0;
-	// max-height: 425px;
+	
+	
 }
 .private__column {
 	flex: 0 0 50%;
@@ -68,7 +68,7 @@
 ///////////////////////////////////////////////////////////
 
 .products {
-	margin: 0 0 40px 0;
+	
 }
 .container {
 }
@@ -77,7 +77,6 @@
 }
 .products-column {
 	flex: 0 0 25%;
-	margin: 0 0 40px 0;
 	
 }
 .products-item {
@@ -206,7 +205,6 @@
 }
 ////////////////////////////////////////////////////////////////////
 .contacts {
-	padding: 80px 0 0 0;
 	&__title {
 		font-family: 'ConvAkzidenzGroteskBoldCond';
 		font-size: 50px;
@@ -268,12 +266,23 @@
 	&__map {}
 }
 .contacts-content-form {
-	&__title {}
+	padding: 55px 60px;
+	&__title {
+		font-family: 'ConvAkzidenzGroteskBoldCond';
+		font-size: 25px;
+		line-height: 50px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		margin: 0 0 30px 0;
+		color: white;
+	}
 	&__btn {}
 }
 .contacts-content-form-body {
+	max-width: 375px;
 }
 .contacts-content-form-line {
+	margin: 0 0 25px 0;
 }
 .input {
 }
@@ -287,3 +296,46 @@
 
 
 //  /<MAIN BLOCK>
+
+// Footer
+
+.container {
+}
+.footer-body {
+	@include flexbox();
+	justify-content: space-between;
+	height: 125px;
+	align-items: center;
+		&__column {
+			
+			
+		}
+}
+.footer {
+		&__text {
+			font-size: 15px;
+			line-height: 25px;
+			color: #4d4d4d;
+			a{
+				text-decoration: underline;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+
+
+		}
+		&__logo {}
+}
+
+
+.container {
+}
+.footer-body {
+		&__column {}
+}
+.footer {
+		&__text {}
+		&__logo {}
+}
+
