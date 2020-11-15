@@ -122,3 +122,54 @@ console.log(palindrom("1234437"));
 //    };
 
 //    console.log(smallestDivisor(1))
+
+// Вывести треугольники в порядке убывания их площади.
+
+// Входные параметры: массив объектов треугольник
+// Выход: упорядоченный массив имён треугольников
+
+// Примечание:
+// •	Расчёт площади треугольника должен производится по формуле Герона.
+// •	Каждый треугольник определяется именами вершин и длинами его сторон.
+// •	Приложение должно обрабатывать ввод чисел с плавающей точкой:
+// {
+// vertices: ‘ABC’,
+// a: 10,
+// b: 20,
+// c: 22.36
+// }
+
+let Gerane = (a, b, c) => {
+  return Math.sqrt(4 * a ** 2 * b ** 2 - (a ** 2 + b ** 2 - c ** 2) ** 2) / 4;
+};
+let compareArea = (array) => {
+  let TrianglesList = [];
+  for (value of array) {
+    let item = value.name;
+    TrianglesList[item] = Gerane(value.a, value.b, value.c);
+  }
+  TrianglesList.sort((a, b) => b - a);
+  return TrianglesList;
+};
+
+let Triangl1 = {
+  name: "Triangl1",
+  a: 10,
+  b: 20,
+  c: 22.36,
+};
+let Triangl2 = {
+  name: "Triangl2",
+  a: 7,
+  b: 3,
+  c: 6,
+};
+let Triangl3 = {
+  name: "Triangl3",
+  a: 20,
+  b: 30,
+  c: 40,
+};
+
+let TrianglesArray = [Triangl1, Triangl2, Triangl3];
+console.log(compareArea(TrianglesArray));
