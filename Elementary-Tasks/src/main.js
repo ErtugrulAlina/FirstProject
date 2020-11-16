@@ -13,7 +13,7 @@ function drawDesk(width, height, symbol) {
 
   for (let i = 0; i < height; i++) {
     let row = "";
-    for (let i = 0; i < width; i++) {
+    for (let j = 0; j < width; j++) {
       row += symbol + " ";
     }
     if (i % 2 != 0) {
@@ -84,12 +84,12 @@ compareLetter(letter1, letter2);
 // Входные параметры: число
 // Выход: извлечённый из числа палиндром либо 0, если извлечение не удалось.
 
-function palindrom(number) {
-  function iter(inexI, indexJ) {
-    if (number[inexI] === number[indexJ]) {
-      return iter(inexI - 1, indexJ + 1);
+function getPalindrom(number) {
+  function iter(indexI, indexJ) {
+    if (number[indexI] === number[indexJ]) {
+      return iter(indexI - 1, indexJ + 1);
     }
-    return number.slice(inexI + 1, indexJ);
+    return number.slice(indexI + 1, indexJ);
   }
   for (let i = 0; i < number.length; i++) {
     if (number[i] == number[i + 1]) {
@@ -100,7 +100,7 @@ function palindrom(number) {
   return 0;
 }
 
-console.log(palindrom("1234437"));
+console.log(getPalindrom("1234437"));
 
 // Реализуйте тело функции smallestDivisor, используя итеративный процесс. Эта функция должна находить наименьший делитель заданного числа.
 
@@ -132,44 +132,37 @@ console.log(palindrom("1234437"));
 // •	Расчёт площади треугольника должен производится по формуле Герона.
 // •	Каждый треугольник определяется именами вершин и длинами его сторон.
 // •	Приложение должно обрабатывать ввод чисел с плавающей точкой:
-// {
-// vertices: ‘ABC’,
-// a: 10,
-// b: 20,
-// c: 22.36
-// }
 
-let Gerane = (a, b, c) => {
-  return Math.sqrt(4 * a ** 2 * b ** 2 - (a ** 2 + b ** 2 - c ** 2) ** 2) / 4;
-};
 let compareArea = (array) => {
   let TrianglesList = [];
   for (value of array) {
     let item = value.name;
-    TrianglesList[item] = Gerane(value.a, value.b, value.c);
+    TrianglesList[item] = value.getSquare();
   }
-  TrianglesList.sort((a, b) => b - a);
+  TrianglesList.sort((a, b) => b[0] - a[0]);
   return TrianglesList;
 };
 
-let Triangl1 = {
-  name: "Triangl1",
-  a: 10,
-  b: 20,
-  c: 22.36,
-};
-let Triangl2 = {
-  name: "Triangl2",
-  a: 7,
-  b: 3,
-  c: 6,
-};
-let Triangl3 = {
-  name: "Triangl3",
-  a: 20,
-  b: 30,
-  c: 40,
-};
+class Triangle {
+  constructor(name, a, b, c) {
+    this.name = name;
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+  getSquare() {
+    return (
+      Math.sqrt(
+        4 * this.a ** 2 * this.b ** 2 -
+          (this.a ** 2 + this.b ** 2 - this.c ** 2) ** 2
+      ) / 4
+    );
+  }
+}
 
-let TrianglesArray = [Triangl1, Triangl2, Triangl3];
+let triangl1 = new Triangle("Triangl1", 10, 20, 22.36);
+let triangl2 = new Triangle("Triangl2", 7, 3, 6);
+let triangl3 = new Triangle("Triangl3", 20, 30, 40);
+
+let TrianglesArray = [triangl1, triangl2, triangl3];
 console.log(compareArea(TrianglesArray));
