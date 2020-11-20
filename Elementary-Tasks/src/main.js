@@ -123,7 +123,6 @@ console.log(getPalindrom("1234437"));
 
 //    console.log(smallestDivisor(1))
 
-
 // 3.	Сортировка треугольников
 // Вывести треугольники в порядке убывания их площади.
 
@@ -142,21 +141,29 @@ console.log(getPalindrom("1234437"));
 // }
 
 let compareArea = (array) => {
-  let TrianglesList = [];
+  let trianglesList = [];
+  let trianglesSquareFirst = 0;
+  let trianglesSquareSecond = 0;
   for (value of array) {
-     let item = value.name;
-      TrianglesList[item] = value.square;
+    let item = value.name;
+    trianglesSquareSecond = value.square;
+    if (trianglesSquareSecond >= trianglesSquareFirst) {
+      trianglesList.unshift(item + ":" + value.square);
+    } else {
+      trianglesList.push(item + ":" + value.square);
     }
-    TrianglesList.sort((a, b) => b[1] - a[1]);
-    return TrianglesList;
+    trianglesSquareFirst = trianglesSquareSecond;
   }
-  // console.log(array[0].square)
-  // let TrianglesList = [];
-  // for (value of array) {
-  //   let item = value.name;
-  //   TrianglesList[item] = value.square;
-  // }
-  // TrianglesList.sort((a, b) => b[1] - a[1]);
+
+  return trianglesList;
+};
+// console.log(array[0].square)
+// let TrianglesList = [];
+// for (value of array) {
+//   let item = value.name;
+//   TrianglesList[item] = value.square;
+// }
+// TrianglesList.sort((a, b) => b[1] - a[1]);
 //   return TrianglesList;
 // };
 class Triangle {
@@ -165,7 +172,7 @@ class Triangle {
     this.a = a;
     this.b = b;
     this.c = c;
-    this.square=this.getSquare();
+    this.square = this.getSquare();
   }
   getSquare() {
     return (
@@ -175,7 +182,6 @@ class Triangle {
       ) / 4
     );
   }
-  
 }
 
 let triangl1 = new Triangle("Triangl1", 10, 20, 22.36);
@@ -183,7 +189,7 @@ let triangl2 = new Triangle("Triangl2", 7, 3, 6);
 let triangl3 = new Triangle("Triangl3", 20, 30, 40);
 
 let TrianglesArray = [triangl1, triangl2, triangl3];
-console.log(compareArea(TrianglesArray));
+console.log(compareArea(TrianglesArray).join(", "));
 
 // 6.	Числовая последовательность
 // Вывести через запятую ряд длиной n, состоящий из натуральных чисел, квадрат которых не меньше заданного m.
@@ -191,73 +197,65 @@ console.log(compareArea(TrianglesArray));
 // Входные параметры: длина и значение минимального квадрата
 // Выход: строка с рядом чисел
 
-function getNaturalNumbrsStr(n, m){
-  let i = 2;
-  let strNaturalNumbrs=[];
-  let j=0
-  while(i<=1000){
-    if (i**2>=m){
-      strNaturalNumbrs[j] =i;
-      j+=1
+function getNaturalNumbrsStr(n, m) {
+  if (Number.isInteger(m) && m >= 0) {
+    let i = 1;
+    let strNaturalNumbrs = [];
+    while (strNaturalNumbrs.length < n) {
+      if (i ** 2 >= m) {
+        strNaturalNumbrs.push(i);
+      }
+      i++;
     }
-    if (strNaturalNumbrs.length >=n){
-      break;
-    }
-    i+=1
-
+    return strNaturalNumbrs.join(", ");
   }
-  return strNaturalNumbrs
+  return "квадрат не число или меньше нуля";
 }
 
-  console.log(getNaturalNumbrsStr(5, 30));
+console.log(getNaturalNumbrsStr(3, "nbv"));
 
 //   7.	Ряд Фибоначчи для диапазона
 // Вывести все числа Фибоначчи, которые удовлетворяют переданному в функцию ограничению: находятся в указанном диапазоне, либо имеют указанную длину.
 
-// Входные параметры: объект context с полями min и max, либо с полем length 
+// Входные параметры: объект context с полями min и max, либо с полем length
 // Выход: массив чисел
 
-function getFib1(n){
-  let a = 1;
-  let b = 1;
-  let j = 2;
-  let fibStr=[1, 1];
-  for(let i=3; i<=n; i++){
-    let c=a+b;
-    fibStr[j]=c;
-    j+=1
-    a=b;
-    b=c;
-  }
-  return fibStr
-}
-function getFib2(min, max){
+function getFib1(n) {
   let a = 0;
   let b = 1;
-  let j = 0;
-  let fibStr=[];
-  for(let i=2; b<=max; i++){
-    let c=a+b;
-    if (b>=min && b<=max){
-      fibStr[j]=b; 
-      j+=1 
-    };
-    a=b;
-    b=c;
+  let fibStr = [1];
+  for (let i = 1; i < n; i++) {
+    let c = a + b;
+    fibStr.push(c);
+    a = b;
+    b = c;
   }
-  return fibStr
-};
-function getFib(obj){
-  if (obj.length){
-    return getFib1(obj.length)
-  };
-  return getFib2(obj.min, obj.max)
-};
+  return fibStr;
+}
+function getFib2(min, max) {
+  let a = 0;
+  let b = 1;
+  let fibStr = [];
+  while (b <= max) {
+    let c = a + b;
+    if (b >= min && b <= max) {
+      fibStr.push(b);
+    }
+    a = b;
+    b = c;
+  }
+  return fibStr;
+}
+function getFib(obj) {
+  if (obj.length) {
+    return getFib1(obj.length);
+  }
+  return getFib2(obj.min, obj.max);
+}
 
-
-let context ={
-  min:3,
-  max:100,
-  length
+let context = {
+  min: 3,
+  max: 100,
+  length: 1,
 };
-console.log(getFib(context))
+console.log(getFib(context).join(", "));
