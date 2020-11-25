@@ -259,3 +259,98 @@ let context = {
   length: 1,
 };
 console.log(getFib(context).join(", "));
+
+// 5.	Счастливые билеты
+// Есть 2 способа подсчёта счастливых билетов:
+// 1. Простой — если на билете напечатано шестизначное число, и сумма первых трёх цифр равна сумме последних трёх, то этот билет считается счастливым.
+// 2. Сложный — если сумма чётных цифр билета равна сумме нечётных цифр билета, то билет считается счастливым.
+// Определить программно какой вариант подсчёта счастливых билетов даст их большее количество на заданном интервале.
+
+// Входные параметры: объект context с полями min и max
+// Выход: объект с информацией о победившем методе и количестве счастливых билетов для каждого способа подсчёта.
+
+let createTickets = function (min, max) {
+  let ticketsArray = [];
+  for (let i = min; i <= max; i++) {
+    if (i >= 100000) {
+      ticketsArray.push(String(i));
+    } else if (i >= 1 && i < 10) {
+      ticketsArray.push("00000" + i);
+    } else if (i >= 10 && i < 100) {
+      ticketsArray.push("0000" + i);
+    } else if (i >= 100 && i < 1000) {
+      ticketsArray.push("000" + i);
+    } else if (i >= 1000 && i < 10000) {
+      ticketsArray.push("00" + i);
+    } else if (i >= 10000 && i < 10000) {
+      ticketsArray.push("0" + i);
+    }
+  }
+  return ticketsArray;
+};
+
+// console.log(createTickets(112112, 112115))
+
+const sumSimplLucky = (arrayTickets) => {
+  let sumLuckyTickets = 0;
+  for (let i = 0; i < arrayTickets.length; i++) {
+    let a = arrayTickets[i];
+    let b = arrayTickets[i][5];
+    if (
+      arrayTickets[i][0] + arrayTickets[i][1] + arrayTickets[i][2] ==
+      arrayTickets[i][3] + arrayTickets[i][4] + arrayTickets[i][5]
+    ) {
+      ++sumLuckyTickets;
+    }
+  }
+  return sumLuckyTickets;
+};
+
+// console.log(sumSimplLucky(createTickets(000001, 999999 )))
+
+const sumComplLucky = (arrayTickets) => {
+  let sumLuckyTickets = 0;
+  for (let i = 0; i < arrayTickets.length; i++) {
+    let sumEvenLuckyTickets = 0;
+    let sumOddLuckyTickets = 0;
+    for (let j = 0; j < 6; j++) {
+      if (arrayTickets[i][j] % 2 == 0) {
+        sumEvenLuckyTickets += Number(arrayTickets[i][j]);
+      } else {
+        sumOddLuckyTickets += Number(arrayTickets[i][j]);
+      }
+    }
+    if (sumEvenLuckyTickets == sumOddLuckyTickets) {
+      ++sumLuckyTickets;
+    }
+  }
+  return sumLuckyTickets;
+};
+
+// console.log(sumComplLucky(createTickets(000001, 999999)))
+
+const getBestWayLuckyTickets = (object) => {
+  let sumSimplLuckyTickets = sumSimplLucky(
+    createTickets(ticketInterval.min, ticketInterval.max)
+  );
+  let sumComplLuckyTickets = sumComplLucky(
+    createTickets(ticketInterval.min, ticketInterval.max)
+  );
+  let simplResultWin = `Победил простой метод с результатом: ${sumSimplLuckyTickets}`;
+  let complResultWin = `Победил сложный метод с результатом: ${sumComplLuckyTickets}`;
+  let theSameResultLuckyTickets =
+    "Одинаковый результат у обоих методов:" + sumSimplLuckyTickets;
+  if (sumSimplLuckyTickets == sumComplLuckyTickets) {
+    return theSameResultLuckyTickets;
+  } else if (sumSimplLuckyTickets > sumComplLuckyTickets) {
+    return simplResultWin;
+  } else {
+    return complResultWin;
+  }
+};
+
+let ticketInterval = {
+  min: 000001,
+  max: 999999,
+};
+console.log(getBestWayLuckyTickets(ticketInterval));
