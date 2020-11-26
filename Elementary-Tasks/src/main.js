@@ -271,7 +271,7 @@ console.log(getFib(context).join(", "));
 
 let createTickets = function (min, max) {
   let ticketsArray = [];
-  for (let i = min; i <= max; i++) {
+  for (let i = Number(min); i <= Number(max); i++) {
     if (i >= 100000) {
       ticketsArray.push(String(i));
     } else if (i >= 1 && i < 10) {
@@ -352,7 +352,7 @@ const getBestWayLuckyTickets = (object) => {
 };
 
 let ticketInterval = {
-  min: 000001,
-  max: 999999,
+  min: "100100",
+  max: "999999",
 };
 console.log(getBestWayLuckyTickets(ticketInterval));
