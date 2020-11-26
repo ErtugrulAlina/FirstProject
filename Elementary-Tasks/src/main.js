@@ -294,11 +294,13 @@ let createTickets = function (min, max) {
 const sumSimplLucky = (arrayTickets) => {
   let sumLuckyTickets = 0;
   for (let i = 0; i < arrayTickets.length; i++) {
-    let a = arrayTickets[i];
-    let b = arrayTickets[i][5];
     if (
-      arrayTickets[i][0] + arrayTickets[i][1] + arrayTickets[i][2] ==
-      arrayTickets[i][3] + arrayTickets[i][4] + arrayTickets[i][5]
+      Number(arrayTickets[i][0]) +
+        Number(arrayTickets[i][1]) +
+        Number(arrayTickets[i][2]) ==
+      Number(arrayTickets[i][3]) +
+        Number(arrayTickets[i][4]) +
+        Number(arrayTickets[i][5])
     ) {
       ++sumLuckyTickets;
     }
