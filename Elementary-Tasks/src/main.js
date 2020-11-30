@@ -274,7 +274,7 @@ let createTickets = function (min, max) {
   for (let i = Number(min); i <= Number(max); i++) {
     if (i >= 100000) {
       ticketsArray.push(String(i));
-    } else if (i >= 1 && i < 10) {
+    } else if (i >= 0 && i < 10) {
       ticketsArray.push("00000" + i);
     } else if (i >= 10 && i < 100) {
       ticketsArray.push("0000" + i);
@@ -282,7 +282,7 @@ let createTickets = function (min, max) {
       ticketsArray.push("000" + i);
     } else if (i >= 1000 && i < 10000) {
       ticketsArray.push("00" + i);
-    } else if (i >= 10000 && i < 10000) {
+    } else if (i >= 10000 && i < 100000) {
       ticketsArray.push("0" + i);
     }
   }
@@ -309,35 +309,27 @@ const sumSimplLucky = (arrayTickets) => {
 };
 
 // console.log(sumSimplLucky(createTickets(000001, 999999 )))
-
 const sumComplLucky = (arrayTickets) => {
   let sumLuckyTickets = 0;
   for (let i = 0; i < arrayTickets.length; i++) {
-    let sumEvenLuckyTickets = 0;
-    let sumOddLuckyTickets = 0;
-    for (let j = 0; j < 6; j++) {
-      if (arrayTickets[i][j] % 2 == 0) {
-        sumEvenLuckyTickets += Number(arrayTickets[i][j]);
-      } else {
-        sumOddLuckyTickets += Number(arrayTickets[i][j]);
-      }
-    }
-    if (sumEvenLuckyTickets == sumOddLuckyTickets) {
+    if (
+      Number(arrayTickets[i][0]) +
+        Number(arrayTickets[i][2]) +
+        Number(arrayTickets[i][4]) ==
+      Number(arrayTickets[i][1]) +
+        Number(arrayTickets[i][3]) +
+        Number(arrayTickets[i][5])
+    ) {
       ++sumLuckyTickets;
     }
   }
   return sumLuckyTickets;
 };
 
-// console.log(sumComplLucky(createTickets(000001, 999999)))
-
-const getBestWayLuckyTickets = (object) => {
-  let sumSimplLuckyTickets = sumSimplLucky(
-    createTickets(ticketInterval.min, ticketInterval.max)
-  );
-  let sumComplLuckyTickets = sumComplLucky(
-    createTickets(ticketInterval.min, ticketInterval.max)
-  );
+const getBestWayLuckyTickets = () => {
+  let ticketsList=createTickets(ticketInterval.min, ticketInterval.max)
+  let sumSimplLuckyTickets = sumSimplLucky(ticketsList);
+  let sumComplLuckyTickets = sumComplLucky(ticketsList);
   let simplResultWin = `Победил простой метод с результатом: ${sumSimplLuckyTickets}`;
   let complResultWin = `Победил сложный метод с результатом: ${sumComplLuckyTickets}`;
   let theSameResultLuckyTickets =
@@ -352,7 +344,10 @@ const getBestWayLuckyTickets = (object) => {
 };
 
 let ticketInterval = {
-  min: "100100",
+  min: "000000",
   max: "999999",
 };
 console.log(getBestWayLuckyTickets(ticketInterval));
+
+
+
